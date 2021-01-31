@@ -14,6 +14,12 @@ buttons.forEach(button => {
     })
 })
 
+const dataClear = document.querySelector('[data-all-clear')
+
+dataClear.addEventListener('click', function() {
+    document.getElementById('calculate-input').value = ''
+})
+
 
 const submit = document.querySelector('.submit-btn')
 submit.addEventListener('click', function() {
@@ -24,8 +30,10 @@ submit.addEventListener('click', function() {
     const notifyRight = document.getElementById('notify-right')
     if(randomNumber == calculateNumber) {
         notifyRight.style.display = 'block'
+        notifyCross.style.display = 'none'
     }else {
         notifyCross.style.display = 'block'
+        notifyRight.style.display = 'none'
     }
 
     document.getElementById('generate-input').value = ''
